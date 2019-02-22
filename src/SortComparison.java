@@ -183,34 +183,6 @@ import java.util.concurrent.TimeUnit;
     	System.out.println("Before sort: " + Arrays.toString(test));
     	System.out.println(" ");
     	System.out.println("After sort: " + Arrays.toString(mergeSortIterative(test)));
-
     }*/
     
-    public static void main(String[] args) throws FileNotFoundException
-    {
-    	double[] fileTester = new double[1000];
-    	Scanner input = new Scanner(new File("numbersNearlyOrdered1000.txt"));
-    	for(int i = 0; i < fileTester.length; i++) {
-    		fileTester[i] = input.nextDouble();
-    	}
-    	//System.out.print(Arrays.toString(fileTester));
-    	/*long startTime = System.nanoTime();
-    	SortComparison.insertionSort(fileTester);
-    	long stopTime = System.nanoTime(); 
-    	long timeElapsed = stopTime - startTime;
-    	System.out.println("Time in Nanoseconds: " + timeElapsed); */
-    	input.close();
-    	long average = 0;
-    	for(int j = 1; j <= 3; j++) {
-    		long startTime = System.nanoTime();
-        	SortComparison.mergeSortRecursive(fileTester);
-        	long stopTime = System.nanoTime(); 
-        	long timeElapsed = stopTime - startTime;
-        	System.out.println("Time " + j + " in Nanoseconds: " + timeElapsed);
-        	average += timeElapsed;
-    	}
-    	average = average / 3;
-    	System.out.println("Average: " + average);
-    }
-
  }
