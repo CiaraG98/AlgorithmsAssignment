@@ -1,6 +1,7 @@
 import java.util.Arrays;
-
 // -------------------------------------------------------------------------
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 /**
  *  This class contains static methods that implementing sorting of an array of numbers
@@ -17,7 +18,6 @@ import java.util.Arrays;
      * This method is static, thus it can be called as SortComparison.sort(a)
      * @param a: An unsorted array of doubles.
      * @return array sorted in ascending order.
-     *
      */
     static double [] insertionSort (double a[]){
     	for(int i = 1; i < a.length; i++) {
@@ -175,13 +175,33 @@ import java.util.Arrays;
     }
 
   
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
     	
     	double[] test = new double[] {4, 2, 6, 1, 7, 10};
     	System.out.println("Before sort: " + Arrays.toString(test));
     	System.out.println(" ");
     	System.out.println("After sort: " + Arrays.toString(mergeSortIterative(test)));
 
+    }*/
+    
+    public static long calculateAverage(long x1, long x2, long x3) {
+    	return (x1 + x2 + x3) / 3;
+    }
+    
+    public static void main(String[] args)
+    {
+    	double[] fileTester = new double[10];
+    	int index = 0;
+    	Scanner input = new Scanner("numbers10.txt");
+    	while(input.hasNextDouble()) {
+    		fileTester[index] = input.nextDouble();
+    		index++;
+    	}
+    	long startTime = System.nanoTime();
+    	SortComparison.insertionSort(fileTester);
+    	long stopTime = System.nanoTime(); 
+    	long timeElapsed = stopTime - startTime;
+    	System.out.println(timeElapsed);    	
     }
 
  }
