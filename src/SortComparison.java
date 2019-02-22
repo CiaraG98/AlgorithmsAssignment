@@ -1,6 +1,8 @@
 import java.util.Arrays;
 // -------------------------------------------------------------------------
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -184,24 +186,31 @@ import java.util.concurrent.TimeUnit;
 
     }*/
     
-    public static long calculateAverage(long x1, long x2, long x3) {
-    	return (x1 + x2 + x3) / 3;
-    }
-    
-    public static void main(String[] args)
+    public static void main(String[] args) throws FileNotFoundException
     {
-    	double[] fileTester = new double[10];
-    	int index = 0;
-    	Scanner input = new Scanner("numbers10.txt");
-    	while(input.hasNextDouble()) {
-    		fileTester[index] = input.nextDouble();
-    		index++;
+    	double[] fileTester = new double[1000];
+    	Scanner input = new Scanner(new File("numbersNearlyOrdered1000.txt"));
+    	for(int i = 0; i < fileTester.length; i++) {
+    		fileTester[i] = input.nextDouble();
     	}
-    	long startTime = System.nanoTime();
+    	//System.out.print(Arrays.toString(fileTester));
+    	/*long startTime = System.nanoTime();
     	SortComparison.insertionSort(fileTester);
     	long stopTime = System.nanoTime(); 
     	long timeElapsed = stopTime - startTime;
-    	System.out.println(timeElapsed);    	
+    	System.out.println("Time in Nanoseconds: " + timeElapsed); */
+    	input.close();
+    	long average = 0;
+    	for(int j = 1; j <= 3; j++) {
+    		long startTime = System.nanoTime();
+        	SortComparison.mergeSortRecursive(fileTester);
+        	long stopTime = System.nanoTime(); 
+        	long timeElapsed = stopTime - startTime;
+        	System.out.println("Time " + j + " in Nanoseconds: " + timeElapsed);
+        	average += timeElapsed;
+    	}
+    	average = average / 3;
+    	System.out.println("Average: " + average);
     }
 
  }
