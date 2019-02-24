@@ -9,23 +9,23 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import java.util.Scanner;
 
-/*	Time in Nano-Seconds.
+/*	
  * 							-----------------------------------------------------------------------------
  * 							| Insert 	| Quick 	| Merge Recursive	| Merge Iterative	| Selection |
  *  -----------------------------------------------------------------------------------------------------
- *	| 10 Random	 			| 2,655		| 4,361		| 5,309				| 8,534				| 2,844		|
+ *	| 10 Random	 			| 0.002655	| 0.004361	| 0.005309			| 0.008534			| 0.002844	|
  *	-----------------------------------------------------------------------------------------------------
- *	| 100 Random			| 93,108	| 53,096	| 47,028			| 48,734			| 92,539	|
+ *	| 100 Random			| 0.093108	| 0.053096	| 0.047028			| 0.048734			| 0.092539	|
  *	-----------------------------------------------------------------------------------------------------
- *	| 1000 Random			| 3,913,575	| 1,068,183	| 443,923			| 476,349			| 2,486,233	|
+ *	| 1000 Random			| 3.913575	| 1.068183	| 0.443923			| 0.476349			| 2.486233	|
  *	-----------------------------------------------------------------------------------------------------
- *	| 1000 few unique 		| 2,712,840	| 837,404	| 412,065			| 473,126			| 3,633,871	|
+ *	| 1000 few unique 		| 2.71284	| 0.837404	| 0.412065			| 0.473126			| 3.633871	|
  *	-----------------------------------------------------------------------------------------------------
- *	| 1000 nearly ordered 	| 3,593,480	| 981,902	| 339,247			| 264,723			| 5,159,631	|
+ *	| 1000 nearly ordered 	| 3.59348	| 0.981902	| 0.339247			| 0.264723			| 5.159631	|
  *	-----------------------------------------------------------------------------------------------------
- * 	| 1000 reverse order	| 4,091,827	| 2,276,692	| 362,761			| 461,747			| 6,585,266	|
+ * 	| 1000 reverse order	| 4.091827	| 2.276692	| 0.362761			| 0.461747			| 6.585266	|
  * 	-----------------------------------------------------------------------------------------------------
- * 	| 1000 sorted			| 2,454,944	| 1,929,102	| 277,238			| 234,003			| 2,479,975	|
+ * 	| 1000 sorted			| 2.454944	| 1.929102	| 0.277238			| 0.234003			| 2.479975	|
  * 	-----------------------------------------------------------------------------------------------------
  */
 
@@ -64,7 +64,7 @@ import java.util.Scanner;
 /**
  *  Test class for SortComparison.java
  *
- *  @author
+ *  @author Ciara Gilsenan, 17324130
  *  @version HT 2019
  */
 @RunWith(JUnit4.class)
@@ -98,6 +98,8 @@ public class SortComparisonTest
     	double[] test = new double[] {4, 2, 6, 1, 7, 10};
     	test = SortComparison.quickSort(test);
     	assertEquals("[1.0, 2.0, 4.0, 6.0, 7.0, 10.0]", Arrays.toString(test));
+    	
+    	//testing negative numbers 
     	double[] negTest = new double[] {-8, -6, -9, -11, -4, -1};
     	assertEquals("[-11.0, -9.0, -8.0, -6.0, -4.0, -1.0]", Arrays.toString(SortComparison.quickSort(negTest)));
     	
@@ -108,6 +110,8 @@ public class SortComparisonTest
     	double[] test = new double[] {5, 3, 8, 9 ,2, 4, 12};
     	test = SortComparison.selectionSort(test);
     	assertEquals("[2.0, 3.0, 4.0, 5.0, 8.0, 9.0, 12.0]", Arrays.toString(test));
+    	
+    	//testing negative numbers 
     	double[] negTest = new double[] {-8, -6, -9, -11, -4, -1};
     	assertEquals("[-11.0, -9.0, -8.0, -6.0, -4.0, -1.0]", Arrays.toString(SortComparison.selectionSort(negTest)));
     	
@@ -118,6 +122,8 @@ public class SortComparisonTest
     	double[] test = new double[] {4, 2, 6, 7, 9, 1};
     	test = SortComparison.insertionSort(test);
     	assertEquals("[1.0, 2.0, 4.0, 6.0, 7.0, 9.0]", Arrays.toString(test));
+    	
+    	//testing negative numbers 
     	double[] negTest = new double[] {-8, -6, -9, -11, -4, -1};
     	assertEquals("[-11.0, -9.0, -8.0, -6.0, -4.0, -1.0]", Arrays.toString(SortComparison.insertionSort(negTest)));
     }
@@ -127,6 +133,8 @@ public class SortComparisonTest
     	double[] test = new double[] {4, 2, 6, 7, 9, 1};	
     	test = SortComparison.mergeSortIterative(test);
     	assertEquals("[1.0, 2.0, 4.0, 6.0, 7.0, 9.0]", Arrays.toString(test));
+    	
+    	//testing negative numbers 
     	double[] negTest = new double[] {-8, -6, -9, -11, -4, -1};
     	assertEquals("[-11.0, -9.0, -8.0, -6.0, -4.0, -1.0]", Arrays.toString(SortComparison.mergeSortIterative(negTest)));
     }
@@ -136,6 +144,8 @@ public class SortComparisonTest
     	double[] test = new double[] {5, 3, 8, 9 ,2, 4, 12};
     	test = SortComparison.mergeSortRecursive(test);
     	assertEquals("[2.0, 3.0, 4.0, 5.0, 8.0, 9.0, 12.0]", Arrays.toString(test));
+    	
+    	//testing negative numbers 
     	double[] negTest = new double[] {-8, -6, -9, -11, -4, -1};
     	assertEquals("[-11.0, -9.0, -8.0, -6.0, -4.0, -1.0]", Arrays.toString(SortComparison.mergeSortRecursive(negTest)));
     }

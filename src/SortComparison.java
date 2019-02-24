@@ -32,7 +32,6 @@ import java.util.concurrent.TimeUnit;
     		}
     	}
     	return a;
-
     }
     
     /**
@@ -54,7 +53,6 @@ import java.util.concurrent.TimeUnit;
     		quickSort(a, index, high); //sorts another partition
     	}
     	return a; //if the low and high have crossed (low > high), the array/sub-array is sorted 
-    	
     }
     
     private static int partition(double a[], int low, int high, double pivot) {
@@ -75,7 +73,6 @@ import java.util.concurrent.TimeUnit;
     		}
     	}
     	return low; //returns the partition point (pivot)
-    	
     }
 
     /**
@@ -102,8 +99,6 @@ import java.util.concurrent.TimeUnit;
     		}
     	}
     	return a;
-
-	
     }
     
     
