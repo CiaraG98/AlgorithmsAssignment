@@ -32,16 +32,17 @@ import java.util.Scanner;
 
 /*
  * a. Which of the sorting algorithms does the order of input have an impact on? Why?
- * Answer: 
+ * Answer: Selection Sort as it has the worst time for the most complex inputs (sorted, few unique, reversed), for example for the reversed input 
+ * 		   the algorithm would have to loop to the end of the array each time to get the minimum value. 
  * 
  * b. Which algorithm has the biggest difference between the best and worst performance, based
  * on the type of input, for the input of size 1000? Why?
  * Answer: Selection Sort has the biggest difference between the best(1000 sorted) and worst(1000 reverse order) performance. This is 
- * 		   because ...
+ * 		   because it is a brute force algorithm that exhaustedly checks each element in the array for the min value within each unsorted partition. 
  * 
  * c. Which algorithm has the best/worst scalability, i.e., the difference in performance time
  * based on the input size? Please consider only input files with random order for this answer. 
- * Answer: 
+ * Answer: Best Scalability -- Merge Sort Recursive , Worst Scalability -- Insertion Sort
  * 
  * d. Did you observe any difference between iterative and recursive implementations of merge
  * sort?

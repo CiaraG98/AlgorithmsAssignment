@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
  *  This class contains static methods that implementing sorting of an array of numbers
  *  using different sort algorithms.
  *
- *  @author
+ *  @author Ciara Gilsenan, 17324130
  *  @version HT 2019
  */
 
@@ -33,8 +33,8 @@ import java.util.concurrent.TimeUnit;
     	}
     	return a;
 
-    }//end insertionsort
-
+    }
+    
     /**
      * Sorts an array of doubles using Quick Sort.
      * This method is static, thus it can be called as SortComparison.sort(a)
@@ -104,7 +104,7 @@ import java.util.concurrent.TimeUnit;
     	return a;
 
 	
-    }//end mergesortIterative
+    }
     
     
     
