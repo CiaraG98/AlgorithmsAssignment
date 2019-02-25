@@ -155,7 +155,28 @@ public class SortComparisonTest
     /**
      *  Main Method.
      *  Use this main method to create the experiments needed to answer the experimental performance questions of this assignment.
-     *  
+     *  public static void main(String[] args) throws FileNotFoundException
+    	{
+    	double[] fileTester = new double[1000];
+    	Scanner input = new Scanner(new File("numbers1000.txt"));
+    	for(int i = 0; i < fileTester.length; i++) {
+    		fileTester[i] = input.nextDouble();
+    	}
+    	long average = 0;
+    	for(int j = 1; j <= 3; j++) {
+    		long startTime = System.nanoTime();
+       	SortComparison.mergeSortRecursive(fileTester);
+       	long stopTime = System.nanoTime(); 
+       	long timeElapsed = stopTime - startTime;
+       	System.out.println("Time " + j + " in Nanoseconds: " + timeElapsed);
+       	average += timeElapsed;
+    	}
+    	average = average / 3;
+    	System.out.println("Average: " + average);
+    	double milliseconds = average / 1000000.0;
+    	System.out.println("Converted: " + milliseconds);
+    	input.close();
+    	}
      *  
      *
      */
